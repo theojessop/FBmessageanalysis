@@ -75,6 +75,16 @@ message_counts = rank_senders_by_message_count()
 word_counts = rank_senders_by_word_count()
 assert word_counts.keys() == message_counts.keys()
 
-print("Total messages:")
-for k in word_counts:
+print(json_objects[0]['title'])
+
+print("\nTotal messages:")
+for k in message_counts:
     print(f'{k}:\t{message_counts[k]}')
+
+print("\nWordcounts:")
+for k in word_counts:
+    print(f'{k}:\t{word_counts[k]}')
+
+print("\nWords per message:")
+for k in word_counts:
+    print(f'{k}:\t{word_counts[k] / message_counts[k]}')
